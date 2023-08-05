@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="TrackEasy.css">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    background-color: #f9f9f9;
+  }
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="TrackEasy.html">Attendance</a>
+  <a class="active" href="Progress.html">Prgress Reports</a>
+  <a class="active" href="SUpdates.html">Daily Updates</a>
+  <a class="active" href="Timetable.html">Time Table</a>
+  <a class="active" href="Meetings.html">Parent Teacher Meetings</a>
+  <a class="active" href="sHomework.html">Homework</a>
+  
+</div>
+
+<div style="padding-left:16px">
+  <br>
+  <button onclick="me()"><h2>Click here for Meetings</h2></button>
+</div>
+
+<div id="outputContainer"></div>
+<ul id="homework-list">
+  <!-- Homework items will be dynamically added here -->
+</ul>
+
+
+<script>
+  function me(){
+    // Retrieve the value from local storage
+    const savedValue = localStorage.getItem("savedValue");
+
+    // Display the value in the output container
+    const outputContainer = document.getElementById("outputContainer");
+    outputContainer.textContent =  addhomework(savedValue); ;
+
+    
+    
+    // Clear the stored value from local storage (optional)
+    localStorage.removeItem("savedValue");
+  }
+
+
+  //admeetings
+  function addHomeworkItem(description) {
+    const homeworkList = document.getElementById("homework-list");
+    const listItem = document.createElement("li");
+    listItem.textContent = description;
+    homeworkList.appendChild(listItem);
+  }
+
+  // Call this function with homework descriptions to add them to the list
+  addHomeworkItem("Parents meeting on 20th October");
+  addHomeworkItem("Orientation Day on 5th august");
+
+  function addhomework(savedValue){
+    if(savedValue==null){
+      
+    }else{
+      addHomeworkItem("Tomorrows Meetings is : "+savedValue);
+    }
+  }
+</script>
+
+</body>
+</html>

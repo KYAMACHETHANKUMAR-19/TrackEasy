@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="TrackEasy.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    background-color: #f9f9f9;
+  }
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="TrackEasy.html">Attendance</a>
+  <a class="active" href="Progress.html">Prgress Reports</a>
+  <a class="active" href="SUpdates.html">Daily Updates</a>
+  <a class="active" href="Timetable.html">Time Table</a>
+  <a class="active" href="Meetings.html">Parent Teacher Meetings</a>
+  <a class="active" href="SHomework.html">Homework</a>
+  
+</div>
+
+<div style="padding-left:16px">
+  <br><br><br>
+</div>
+<h1>Homework List</h1>
+<ul id="homework-list">
+  <!-- Homework items will be dynamically added here -->
+</ul>
+<input type="text" id="homew" placeholder="enter homeworks">
+<button onclick="addhomework()">add homework</button>
+
+</body>
+<script>
+  function addHomeworkItem(description) {
+    const homeworkList = document.getElementById("homework-list");
+    const listItem = document.createElement("li");
+    listItem.textContent = description;
+    homeworkList.appendChild(listItem);
+  }
+
+  // Call this function with homework descriptions to add them to the list
+  addHomeworkItem("Complete math exercises");
+  addHomeworkItem("Read chapter 5 of history book");
+
+  function addhomework(){
+    let a= document.getElementById("homew").value;
+    addHomeworkItem(a);
+  }
+  // Add more homework items as needed
+</script>
+</html>

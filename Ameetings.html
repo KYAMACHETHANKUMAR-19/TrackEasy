@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input Page</title>
+  
+  <link rel="stylesheet" href="TrackEasy.css">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    background-color: #f9f9f9;
+  }
+</style>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="AHomework.html">Homework Updates</a>
+        <a class="active" href="Ameetings.html">Meeting Updates</a>
+        <a class="active" href="Aprogress.html">Student Tracking</a>
+        <a class="active" href="AUpdates.html">Updates</a>
+        <a class="active" href="ATUpdates.html">Teacher Tracking </a>
+        
+    </div>
+
+  <h1>Add Meeting Details :</h1>
+  <input type="text" id="myInput" placeholder="Enter Meeting details here" style="height: 60px;width: 500px;">
+  <button onclick="saveValue()">Add Meeting</button>
+
+  <script>
+    function saveValue() {
+      const inputElement = document.getElementById("myInput");
+      const inputValue = inputElement.value;
+
+      // Save the value in local storage
+      localStorage.setItem("savedValue", inputValue);
+
+      // Redirect to the other HTML page
+      window.location.href = "Ameetings.html";
+    }
+  </script>
+</body>
+</html>
